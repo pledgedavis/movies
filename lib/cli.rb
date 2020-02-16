@@ -12,7 +12,7 @@ class Movies::CLI
                Enter 'Hello' to see movies!"
                users_input = gets.strip #asks user for response
                if users_input == "Hello" || users_input == "hello"
-        puts "        These are the current movies showing today, please select 1 - 13 "
+        puts "        These are the current movies showing today, please select 1 - 14 "
 
 
                     get_movies 
