@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby 
 
-
 require_relative '../lib/gemdwnld'
 
-
-Movies::CLI.new.run
+Movies::CLI.new.run # Allows me to run my code with ruby bin/run
