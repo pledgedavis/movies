@@ -98,7 +98,7 @@ class Movies::CLI
         puts "================================================================================================="
          puts "Good choice on#{@current_movie.name}, what time would you like to see#{@current_movie.name}?"
                 #  get_shows
-                list_times
+                # list_times
                                           #calls some more methods
                 # binding.pry
                 get_user_time 
