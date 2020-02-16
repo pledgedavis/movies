@@ -4,50 +4,23 @@
 
     # class="displaytitle"
     def self.scraped_movies
-        doc = Nokogiri::HTML(open("http://83089.formovietickets.com:2235/"))
-        # details = doc.css("select#"a.displaytitle"")
-        each_movie = doc.css("a.displaytitle")
-        each_showtime = doc.css("a.showtime")
-        each_movie.each do |key|
-        movie_name = key.text.gsub(/\s+/, " ")  
-        
-        Movies::Movie.new(movie_name)
-        #, show_times)  #makes list of movies available
-        # movie_name << each_movies_showtime
-        #  binding.pry
-        end
+        doc = Nokogiri::HTML(open("http://83089.formovietickets.com:2235/"))  #the website that i am scraping
+        titles_and_times = doc.css("a.displaytitle,a.showtime") #my two links that are being scraped from the website   
+        movie = {title: nil, times: []}
+        titles_and_times.each do |element| # iterating over the movie titles and times by each element
             # binding.pry
-        each_showtime.each do |show|
-            times = show.text.gsub(/\s+/, " ") 
-                 binding.pry
-                  Movies::Movie.new(times)
-         end
+            if element.attr("class") == "displaytitle" #checking if name is equal to the value returns true
+                Movies::Movie.new(movie[:title], movie[:times]) if movie[:title]
+                movie[:title] = element.text #setting the movie names equal to @name and movie times to @times
+                movie[:times] = []
+                # binding.pry
+            else
+                movie[:times] << element.text # if code above isn't executed gonna shovel the name and times to an empty array
+            end
+        end
+        # binding.pry
+        Movies::Movie.new(movie[:title], movie[:times]) #returns movies with attr accessors from intialize in Movie file
     end
-
-   
-    # def scraped_showtimes
-    #     binding.pry
-    #     doc = Nokogiri::HTML(open("http://83089.formovietickets.com:2235/"))
-    #     showtime_array = []
-    #        each_showtime = doc.css("a.showtime")
-            #    each_showtime
-            #   each_showtime.each do |showtime_array|
-                # movies_showtime = showtime_array.text.gsub(/\s+/, " ") 
-                # movies_showtime
-                # Movies::Movie.new(movies_showtime)      
-                # binding.pry   
-            #   end
-    # end
 end
 
-#     def self.scraped_showtimes
-#       website = Nokogiri::HTML(open("http://83089.formovietickets.com:2235/"))
-
-
-#       each_movies_showtime = website.css("a.showtime")
-#       each_movies_showtime.each do |m|
-#         puts m.text
-       
-   #  end
-#  end
  # scrape only
