@@ -3,12 +3,11 @@
 Welcome to my movie theatre app!
 
 
-TODO: 
+Hello this is my cli project for a movie theatere named flagship cinemas!
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
+- After you are finished opening and cloning this project you can run bundle install to make gems available
+<!-- Add this line to your application's Gemfile:
 ```ruby
 gem 'movies'
 ```
@@ -19,11 +18,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install movies
+    $ gem install movies -->
 
 ## Usage
 
-TODO: Write usage instructions here
+- To run my app you have to run, bin ruby/run
+- Then you enter everything as it is displayed 
 
 ## Development
 

@@ -94,18 +94,18 @@ class Movies::CLI
      end
 
      def user_picked_movie_for
-        @current_movie = @movies[@chosen_movie.to_i - 1]
+        @current_movie = @movies[@chosen_movie.to_i - 1]  #gives current movie chosen vy the user and returns it in the string form below 
         # binding.pry
          puts "Good choice on#{@current_movie.name}, what time would you like to see#{@current_movie.name}?"
                 #  get_shows
                 list_times
-
+                                          #calls some more methods
                 # binding.pry
                 get_user_time 
                
        
                 
-         puts "Ok perfect your movie will start at #{@current_movie.times[@input]}, enjoy your movie!"
+         puts "Ok perfect your movie will start at #{@current_movie.times[@input]}, enjoy your movie!" #takes current movie and shows times for that specific movie for the user to decide which
     # binding.pry
     end
 end
