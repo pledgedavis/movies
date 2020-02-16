@@ -23,13 +23,10 @@ class Movies::CLI
                     puts "Wrong input!"
             
                  end
-
-
     end
    
     def get_movies
-     
-      
+    
          Movies::Scraper.scraped_movies   #accesses my scraped movies from my scraper class
         #  binding.pry
           @movies = Movies::Movie.all #assign @movies to all instance method
@@ -55,6 +52,8 @@ class Movies::CLI
 
     def get_user_time
         # binding.pry
+        puts "                                                                          
+        "
         puts "Select the time you would like to watch #{@current_movie.name}. "
      puts "======================================================================"
     #   binding.pry
@@ -96,6 +95,7 @@ class Movies::CLI
      def user_picked_movie_for
         @current_movie = @movies[@chosen_movie.to_i - 1]  #gives current movie chosen vy the user and returns it in the string form below 
         # binding.pry
+        puts "================================================================================================="
          puts "Good choice on#{@current_movie.name}, what time would you like to see#{@current_movie.name}?"
                 #  get_shows
                 list_times
@@ -104,7 +104,9 @@ class Movies::CLI
                 get_user_time 
                
        
-                
+         puts "====================================================================================================="   
+         
+         
          puts "Ok perfect your movie will start at #{@current_movie.times[@input]}, enjoy your movie!" #takes current movie and shows times for that specific movie for the user to decide which
     # binding.pry
     end

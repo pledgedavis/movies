@@ -12,7 +12,6 @@ class Movies::Movie
     def self.all
         @@all  #class method that allows us to put self into the array
     end
-
 end
 
 # keep track of movies

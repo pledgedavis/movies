@@ -1,7 +1,6 @@
  require 'pry'
  class Movies::Scraper
 
-
     # class="displaytitle"
     def self.scraped_movies
         doc = Nokogiri::HTML(open("http://83089.formovietickets.com:2235/"))  #the website that i am scraping
