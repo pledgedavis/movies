@@ -18,10 +18,12 @@ class Movies::CLI
                     get_movies 
                     list_movies           #applies methods
                     get_user_movie
+               elsif users_input == "exit"
+                        puts "Goodbye!"
+                     exit
                 else 
-                    users_input != "Hello" || users_input != "hello"
                     puts "Wrong input!"
-            
+                    run
                  end
     end
    
@@ -47,7 +49,9 @@ class Movies::CLI
      
     def get_user_movie
         @chosen_movie = gets.strip.to_i  
+        # binding.pry 
         user_picked_movie_for if valid_input(@chosen_movie, @movies) #uses the valid input method to check correct user input
+        # binding.pry
     end
 
     def get_user_time
@@ -76,6 +80,7 @@ class Movies::CLI
 
  
     def valid_input(input, items)
+        # binding.pry
         input.to_i <= items.length && input.to_i > 0 #checks if user input is greater than 0 but equal list length
     end
 
@@ -93,7 +98,7 @@ class Movies::CLI
      end
 
      def user_picked_movie_for
-        @current_movie = @movies[@chosen_movie.to_i - 1]  #gives current movie chosen vy the user and returns it in the string form below 
+        @current_movie = @movies[@chosen_movie.to_i - 1]  #gives current movie chosen by the user and returns it in the string form below 
         # binding.pry
         puts "================================================================================================="
          puts "Good choice on#{@current_movie.name}, what time would you like to see#{@current_movie.name}?"
