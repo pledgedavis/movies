@@ -1,6 +1,6 @@
 # Movies
    Flagship Cinemas 
-Welcome to my movie theatre app!
+Welcome to my movie theatre app! Where users can schedule a time to go watch their favorite movies at flagship cinemas.
 
 
 Hello this is my cli project for a movie theatere named flagship cinemas!
