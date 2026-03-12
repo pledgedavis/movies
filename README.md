@@ -1,5 +1,5 @@
 # Movies
-   Flagship Cinemas 
+   Flagship Cinemas Movie Theatre clone-
 Welcome to my movie theatre app! Where users can schedule a time to go watch their favorite movies at flagship cinemas.
 
 
